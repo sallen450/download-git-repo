@@ -27,7 +27,7 @@ The file path to download the repository to.
 #### options
 An optional options object parameter with download options. Options include:
 
-- `clone` - boolean default `false` - If true use `git clone` instead of an http download. While this is significantly slower, it does allow private repositories to be used if the appropriate SSH keys are setup.
+- `clone` - boolean default `false` - If true use `git clone` instead of an http download. While this can be a bit slower, it does allow private repositories to be used if the appropriate SSH keys are setup.
 
 #### callback
 The callback function as `function(err)`.
