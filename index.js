@@ -23,7 +23,7 @@ function download(repo, dest, fn) {
   else
     url = github(normalize(repo));
 
-  var dl = new Download({ mode: '755', extract: true, strip: 1 }).get(url).dest(dest).run(function(err, files) {
+  var dl = new Download({ mode: '666', extract: true, strip: 1 }).get(url).dest(dest).run(function(err, files) {
     err === null ? fn() : fn(err)
   });
 }
