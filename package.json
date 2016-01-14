@@ -15,7 +15,9 @@
     "tarball"
   ],
   "dependencies": {
-    "download": "^4.4.3"
+    "download": "^4.4.3",
+    "git-clone": "^0.1.0",
+    "rimraf": "^2.5.0"
   },
   "devDependencies": {
     "mocha": "^2.3.4",
