@@ -1,6 +1,6 @@
 {
   "name": "download-git-repo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "repository": "git://github.com/flipxfx/download-git-repo",
   "description": "Download and extract a git repository (GitHub, Bitbucket) from node.",
