@@ -58,6 +58,10 @@ function normalize(repo) {
     type = 'github';
     repo = repo.substring(7);
   }
+  else if (repo.indexOf('gitlab:') === 0) {
+    type = 'gitlab';
+    repo = repo.substring(7);
+  }
   else if (repo.indexOf('bitbucket:') === 0) {
     type = 'bitbucket';
     repo = repo.substring(10);
@@ -92,6 +96,8 @@ function getUrl(repo, clone) {
 
   if (repo.type === 'github')
     url = github(repo, clone);
+  else if (repo.type === 'gitlab')
+    url = gitlab(repo, clone);
   else if (repo.type === 'bitbucket')
     url = bitbucket(repo, clone);
   else
@@ -114,6 +120,24 @@ function github(repo, clone) {
     url = 'git@github.com:' + repo.owner + '/' + repo.name + '.git';
   else
     url = 'https://github.com/' + repo.owner + '/' + repo.name + '/archive/' + repo.checkout + '.zip';
+
+  return url;
+}
+
+/**
+ * Return a GitLab url for a given `repo` object.
+ *
+ * @param {Object} repo
+ * @return {String}
+ */
+
+function gitlab(repo, clone) {
+  var url;
+
+  if (clone)
+    url = 'git@gitlab.com:' + repo.owner + '/' + repo.name + '.git';
+  else
+    url = 'https://gitlab.com/' + repo.owner + '/' + repo.name + '/repository/archive.zip?ref=' + repo.checkout;
 
   return url;
 }

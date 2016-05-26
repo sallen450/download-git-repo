@@ -1,6 +1,6 @@
 # download-git-repo
 
-Download and extract a git repository (GitHub, Bitbucket) from node.
+Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.
 
 ## Installation
 
@@ -16,6 +16,7 @@ Download a git `repository` to a `destination` folder with `options`, and `callb
 The short hand repository string to download the repository from.
 
 - GitHub - `github:owner/name` or simply `owner/name`
+- GitLab - `gitlab:owner/name`
 - Bitbucket - `bitbucket:owner/name`
 
 The `repository` parameter defaults to the `master` branch, but you can specify a branch or tag as a URL fragment like `owner/name#my-branch`.
